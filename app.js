@@ -8,7 +8,7 @@ function logout(){currentUser={name:"",role:""};$("app").classList.add("hidden")
 function hidePages(){document.querySelectorAll(".page").forEach(x=>x.classList.add("hidden"))}
 function goHome(){hidePages();$("home").classList.remove("hidden")}
 function openPage(id){hidePages();$(id).classList.remove("hidden");if(id==="printPage")renderReport("user");if(id==="dailyPage")renderDaily("user")}
-$("refForm").addEventListener("submit",e=>{e.preventDefault();let r={id:Date.now(),tanggal:$("tanggal").value,nama:$("nama").value.trim(),unit:$("unit").value.trim(),customer:$("customer").value.trim(),produk:$("produk").value,status:$("status").value,user:currentUser.name};referrals.push(r);localStorage.setItem("referrals",JSON.stringify(referrals));alert("Referral berhasil disimpan.");e.target.reset();$("tanggal").value=new Date().toISOString().slice(0,10)})
+$("refForm").addEventListener("submit",e=>{e.preventDefault();let r={id:Date.now(),tanggal:$("tanggal").value,petugas:$("petugas").value.trim(),,unit:$("unit").value.trim(),customer:$("customer").value.trim(),produk:$("produk").value,status:$("status").value,user:currentUser.name};referrals.push(r);localStorage.setItem("referrals",JSON.stringify(referrals));alert("Referral berhasil disimpan.");e.target.reset();$("tanggal").value=new Date().toISOString().slice(0,10)})
 function dataFor(mode){
   return mode==="all"
     ? referrals
