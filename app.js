@@ -69,7 +69,7 @@ function deleteReferral(id){
     "Hapus data referral ini?\n\n" +
     "Customer: " + item.customer
   )){
-    return;
+    return; 
   }
 
   referrals = referrals.filter(r => r.id !== id);
